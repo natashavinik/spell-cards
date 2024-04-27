@@ -1,21 +1,22 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useQuery } from '@tanstack/react-query'
+import { fetchSpells } from './fetchSpells.jsx'
 import './App.css'
 
 export const App = () => {
-  const [spells, setSpells] = useState('')
+  const { data, isLoading } = useQuery(['fetchSpells'], fetchSpells)
 
-  useEffect(()=>{fetch('https://api.open5e.com/spells/').then(res => res.json()).then(res=>setSpells(res))
-  }, [])
-  return (
-    <> 
+  return <> 
       <h1>Spells</h1>
       <div display="flex" className="card" >
-        { spells && spells.results.map((spell) => {return <SpellCard spell={spell} />})}
+        {isLoading ? 'there are not spells' : 'there are spells'}
       </div>
     </>
-  )
+  
 }
 
-const SpellCard = (spell) => {
-  return <p key={spell.spell.slug}>{spell.spell.name}</p>
+
+
+const SpellCard = ({spell}) => {
+  return <p key={spell.slug}>{spell.name}</p>
 }
