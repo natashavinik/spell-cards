@@ -8,7 +8,6 @@ export const App = () => {
   const { data, isLoading } = useQuery(['fetchSpells'], fetchSpells)
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
   return <> 
-      <button type="button" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>Sidebar</button>
       <h1>Spells</h1>
       <div className="flex-container" >
         { isLoading ? 'there are no spells' : 'there are spells'}
