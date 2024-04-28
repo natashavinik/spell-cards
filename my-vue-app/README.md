@@ -38,8 +38,15 @@ Add a new feature to your spell cards: a way to open and close the sidebar and i
 
 ## Part 3 - Take home project
 
-There's a whole lot more you could do with this to make players happy. Implement two of the following features to the spell cards and create your own github repo with a `README` detailing your strategy and explaining your decisions.
+There's a whole lot more you could do with this to make players happy. Implement two of the following features, one smaller and one larger, to the spell cards and create your own Github repo with a `README` detailing your strategy and explaining your decisions. You have two days. Email Kat and Grace a link to your repo on Github when it's done.
 
+Smaller features:
 - Add whichever expanded spell detail feature you didn't choose in part 2
+- Use react-query to get the data instead of `.then` NOTE
+- Add sorting buttons so the user can toggle between sorting by spell level and sorting alphabetically by name
+
+Larger features:
 - Since the data is paginated already, add page browsing
-- Add tabs so the player can browse spells by class
+- Add tabs so the player can browse spells by class or level
+    NOTE: The full set of caster classes is Bard, Cleric, Druid, Paladin, Ranger, Sorcerer, Warlock, and Wizard. Spells range in level from cantrip (sometimes thought of as level 0) to 1 through 9, with potency increasing as level increases.
+- Add a "known spells" section to the page that users can add spells to and remove spells from. It does not have to persist with a refresh.
