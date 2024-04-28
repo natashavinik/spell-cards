@@ -8,3 +8,12 @@ export const SpellCard = ({spell}) => {
       <p>{`Components: ${spell.components}`}</p>
     </div>
   }
+
+export const DetailSidebar = ( {isOpen} ) => {
+  return (
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+      Sick sidebar bro
+    </div>
+  )
+}
+  
